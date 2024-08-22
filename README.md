@@ -52,7 +52,7 @@ A Buffer Overflow attack is Checked and Exploited in the following steps :
 -   **EBP**: EBP is the Extended Base Stack Pointer and its purpose is to point to the base address of the stack.
 
 ### 2(1) Fuzzing
-1. The First step is sending a lot of Junk Data to the server, until it gets crashed. We can use the [Fuzzer.py](https://github.com/IamLucif3r/Buffer-Overflow/blob/main/Fuzzer.py) after making required changes according to the input sent to server. 
+1. The First step is sending a lot of Junk Data to the server, until it gets crashed. We can use the [Fuzzer.py](https://github.com/sanan2004/Buffer-Overflow-tool/blob/main/Fuzzer.py) after making required changes according to the input sent to server. 
 2. The Script will send the Chunk of data in increasing order (100 bytes for first run, 200 in second run and so on). There will be a time, when the server/application will get crashed. 
 
 ### 2(2) Finding the Offset
@@ -62,7 +62,7 @@ A Buffer Overflow attack is Checked and Exploited in the following steps :
 ```
 /usr/share/metasploit-framework/tools/exploit/pattern\_create.rb -l 3000
 ```
-- Now, we will add this pattern in our [Exploit.py](https://github.com/IamLucif3r/Buffer-Overflow/blob/main/Exploit.py) and run the script after restarting the application. 
+- Now, we will add this pattern in our [Exploit.py](https://github.com/sanan2004/Buffer-Overflow-tool/blob/main/Exploit.py) and run the script after restarting the application. 
  
 - Observe the value of EIP in the Immunity Debugger, this is the offset value we will be needed in creating exploitaion. 
 ![](assets/EIPoffsetvaluefound.png)
@@ -84,7 +84,6 @@ A Buffer Overflow attack is Checked and Exploited in the following steps :
 ### 2(4) Finding the Bad Characters
 - We will be checking all the bad characters in our code and check if any one acts up.
 -   Also by default the \\x00 (no byte is bad) acts up so we will remove it. Below is the list of bad characters.
--   ```
 badchars = ("\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\x09\\x0a\\x0b\\x0c\\x0d\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f"
 "\\x20\\x21\\x22\\x23\\x24\\x25\\x26\\x27\\x28\\x29\\x2a\\x2b\\x2c\\x2d\\x2e\\x2f\\x30\\x31\\x32\\x33\\x34\\x35\\x36\\x37\\x38\\x39\\x3a\\x3b\\x3c\\x3d\\x3e\\x3f\\x40"
 "\\x41\\x42\\x43\\x44\\x45\\x46\\x47\\x48\\x49\\x4a\\x4b\\x4c\\x4d\\x4e\\x4f\\x50\\x51\\x52\\x53\\x54\\x55\\x56\\x57\\x58\\x59\\x5a\\x5b\\x5c\\x5d\\x5e\\x5f"
@@ -141,7 +140,5 @@ Fork this repo, do the required changes and send me a PR. I'll merge your reques
 - Add more Fuzzing Scripts, in different programming languages.
 - Add more Exploitation Scripts, in different programming languages.
 - Improvise the Documentation (because I'm not very good in it).
-
-Show some   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/31/heavy-black-heart_2764.png" height =20 > by  starring the Repository. 
 
 Create by : [Sanan Qasimzade](https://www.linkedin.com/in/senan-qasimzade/)
